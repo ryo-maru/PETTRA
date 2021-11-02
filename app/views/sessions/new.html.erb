@@ -1,0 +1,20 @@
+<div class="name text-center">
+<h1>PETTRA</h1>
+<br>
+<h5>登録メールアドレス、パスワードを入力してください</h5>
+<br>
+<br>
+<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit "ログイン" %>
+  <br>
+  <br>
+  <br>
+  <%= link_to 'パスワードを忘れたら...'%>
+<% end %>
+</div>

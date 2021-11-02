@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PETTRA</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+		<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+		<%= image_tag 'image.png', class: "tops_field" %>
+			<a class="navbar-brand" href="tops">Home</a>
+			<a class="navbar-brand" href="#">About</a>
+			<a class="navbar-brand" href="#">Features</a>
+			<a class="navbar-brand" href="#">Princing</a>
+			<a class="navbar-brand" href="#">Contact us</a>
+		</div>
+
+</nav>
+
+  </header>
+
+    <br>
+    <br>
+    <div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+    顧客情報
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+    <a href="customers" class="btn btn--orange">顧客情報</a>
+    <a href="" class="btn btn--white">予約情報</a>
+    <a href="" class="btn btn--orange">薬剤管理</a>
+    <br>
+    <br>
+    <br>
+  </div>
+  <div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+  予約情報
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <li><a class="dropdown-item" href="#">Action</a></li>
+  <li><a class="dropdown-item" href="#">Another action</a></li>
+  <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+    <a href="" class="btn btn--white">診察カルテ</a>
+    <a href="" class="btn btn--orange">入院管理</a>
+    <a href="" class="btn btn--white">会計情報</a>
+    <br>
+    <br>
+    <br>
+  </div>
+  <div class="dropdown">
+<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+  薬剤管理
+</a>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <li><a class="dropdown-item" href="#">Action</a></li>
+  <li><a class="dropdown-item" href="#">Another action</a></li>
+  <li><a class="dropdown-item" href="#">Something else here</a></li>
+</ul>
+    <a href="" class="btn btn--orange">DM管理</a>
+    <a href="" class="btn btn--white">オリジナル辞書登録</a>
+    <a href="" class="btn btn--orange">メニュー追加</a>
+</div>
+<br>
+<br>
+<div class="dropdown">
+<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+診察カルテ
+</a>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <li><a class="dropdown-item" href="#">Action</a></li>
+  <li><a class="dropdown-item" href="#">Another action</a></li>
+  <li><a class="dropdown-item" href="#">Something else here</a></li>
+</ul>
+</div>
+
+
+  </body>
+  <%= yield %>
+
+    <footer>
+      <p>© 2021 PETTRA Corp.</p>
+    </footer>
+
+</html>

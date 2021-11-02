@@ -1,0 +1,23 @@
+<%= form_with(model: @customer, local: true) do |form| %>
+  <div class="medical_record_number">
+    <%= form.label :カルテ番号 %>
+    <%= form.text_field :medical_record_number %>
+  </div>
+  <div class="animal_major_classification">
+    <%= form.label :動物大分類 %>
+    <%= form.text_field :animal_major_classification %>
+  </div>
+  <div class="animal_subcategory">
+    <%= form.label :動物小分類 %>
+    <%= form.text_field :animal_subcategory %>
+  </div>
+  <div class="name">
+    <%= form.label :名前 %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="last_visit_date">
+    <%= form.label :最終来院日 %>
+    <%= form.date_field :last_visit_date %>
+  </div>
+  <%= form.submit %>
+<% end %>

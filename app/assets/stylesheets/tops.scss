@@ -1,0 +1,45 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: #eb6100;
+  width: 250px;
+  height: 70px;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.btn--white,
+a.btn--white {
+  color: #black;
+  background-color: #DEB887;
+  width: 250px;
+  height: 70px;
+}
+.btn--white:hover,
+a.btn--white:hover {
+  color: #black;
+  background: #DEB887;
+}
+
+footer {
+  width: 100%;
+  background-color:#2c3e50;
+  padding: 20px 0 10px 0;
+  color: white;
+  margin: auto;
+  padding-bottom: 10px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.tops_field{
+  width: 100px;
+}
