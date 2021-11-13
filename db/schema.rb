@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_01_093141) do
+ActiveRecord::Schema.define(version: 2021_11_12_141649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,29 @@ ActiveRecord::Schema.define(version: 2021_11_01_093141) do
     t.string "animal_subcategory"
     t.string "name"
     t.date "last_visit_date"
+  end
+
+  create_table "deseases", force: :cascade do |t|
+    t.integer "disease_number"
+    t.string "animal_category"
+    t.string "disease"
+    t.string "sym_part"
+    t.string "symptom"
+    t.string "url"
+  end
+
+  create_table "disease", force: :cascade do |t|
+    t.integer "disease_number"
+    t.string "animal_category"
+    t.string "disease"
+    t.string "sym_part"
+    t.string "symptom"
+    t.string "url"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   #get '/tops', to: 'tops#index'
   resources :customers
   resources :tops
+  resources :diseases do
+    collection do
+      get 'search'
+    end
+  end
 
 end
