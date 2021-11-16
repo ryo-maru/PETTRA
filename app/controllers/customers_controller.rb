@@ -8,7 +8,7 @@ class CustomersController < ApplicationController
   end
 
   def show
-    redirect_to new_customer_path
+    @customer = Customer.find(params[:id])
   end
 
   def create

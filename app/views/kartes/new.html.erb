@@ -1,0 +1,71 @@
+<%= form_with(model: @karte, local: true) do |form| %>
+  <div class="karte_number">
+    <%= form.label :カルテ番号 %>
+    <%= form.text_field :karte_number %>
+  </div>
+  <div class="patient_number">
+    <%= form.label :患者番号 %>
+    <%= form.text_field :patient_number %>
+  </div>
+  <div id="result-div" class="s">
+    <%= form.label :test %>
+    <%= form.text_field :s %>
+  </div>
+
+  <div class="o">
+    <%= form.label :o %>
+    <%= form.text_field :o %>
+  </div>
+  <div class="a">
+    <%= form.label :a %>
+    <%= form.text_field :a %>
+  </div>
+  <div class="p">
+    <%= form.label :p %>
+    <%= form.text_field :p %>
+  </div>
+  <%= form.submit %>
+<% end %>
+<%= link_to '戻る', customers_path %>
+<button id="start-btn">start</button>
+<button id="stop-btn">stop</button>
+
+<script>
+
+  const startBtn = document.querySelector('#start-btn');
+  const stopBtn = document.querySelector('#stop-btn');
+  const resultDiv = document.querySelector('#result-div');
+
+  SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+  let recognition = new SpeechRecognition();
+
+  recognition.lang = 'ja-JP';
+  recognition.interimResults = true;
+  recognition.continuous = true;
+
+  let finalTranscript = ''; // 確定した(黒の)認識結果
+
+  recognition.onresult = (event) => {
+    let interimTranscript = ''; // 暫定(灰色)の認識結果
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      let transcript = event.results[i][0].transcript;
+      if (event.results[i].isFinal) {
+        finalTranscript += transcript;
+      } else {
+        interimTranscript = transcript;
+      }
+    }
+    resultDiv.innerHTML = '<label for="karte_s">S</label><input type="text" name="karte[s]" id="karte_s" value = "' + finalTranscript + interimTranscript + '">';
+  }
+
+  startBtn.onclick = () => {
+    recognition.start();
+  }
+  stopBtn.onclick = () => {
+    recognition.stop();
+  }
+</script>
+
+<footer>
+  <p>© 2021 PETTRA Corp.</p>
+</footer>

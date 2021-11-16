@@ -24,30 +24,11 @@
 </nav>
 
   </header>
-<h1>顧客情報</h1>
-<table class="table table-hover">
-  <tr>
-    <th>患者番号</th>
-    <th>動物大分類</th>
-    <th>動物小分類</th>
-    <th>名前</th>
-    <th>最終来院日</th>
-  </tr>
-<% @customers.each do |customer| %>
-  <tr>
-    <td><%= customer.medical_record_number %></td>
-    <td><%= customer.animal_major_classification %></td>
-    <td><%= customer.animal_subcategory %></td>
-    <td><%= customer.name %></td>
-    <td><%= customer.last_visit_date %></td>
+<h1>患者詳細画面</h1>
+<p>患者番号: <%= @customer.medical_record_number %></p>
+<p>動物大分類: <%= @customer.animal_major_classification %></p>
+<p>動物小分類: <%= @customer.animal_subcategory %></p>
+<p>名前: <%= @customer.name %></p>
+<p>最終来院日: <%= @customer.last_visit_date %></p>
 
-    <td><%= link_to "詳細", customer_path(customer.id) %></td>
-
-
-  </tr>
-<% end %>
-</table>
-<%= link_to '+ 患者登録', new_customer_path %>
-<footer>
-  <p>© 2021 PETTRA Corp.</p>
-</footer>
+<td><%= link_to "新規カルテ", new_karte_path  %></td>
